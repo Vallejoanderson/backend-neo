@@ -1,10 +1,9 @@
-const express = require('express')
+import express, { Request, Response } from 'express'
+import { sequelize } from './connection'
 const app = express()
 const port = 3000
-const { sequelize } = require('./connection')
-const { Category } = require('./models/category')
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
   res.send('Hello from Node API')
 })
 
@@ -16,4 +15,4 @@ sequelize
 	.then(() => {
 		app.listen(port, () => { console.log('Server listening on: ', port) })
 	})
-	.catch((err) => { console.error('Connection fail: ', err) })
+	.catch((err: any) => { console.error('Connection fail: ', err) })

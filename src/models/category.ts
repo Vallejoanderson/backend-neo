@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize')
-const { sequelize } = require('../connection')
+import { DataTypes } from 'sequelize'
+import { sequelize } from '../connection'
  
 const Category = sequelize.define('Category', {
     name: {
@@ -12,7 +12,5 @@ const Category = sequelize.define('Category', {
     }
   }, { tableName: 'categories' })
 
-  module.exports = {
-    Category
-  }
+  export { Category }
 
