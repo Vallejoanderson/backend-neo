@@ -12,5 +12,5 @@ const Category = sequelize.define('Category', {
     }
   }, { tableName: 'categories' })
 
-  export { Category }
+export { Category }
 
