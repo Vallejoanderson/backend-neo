@@ -20,4 +20,14 @@ const createSubcategories = async (req: Request, res: Response) => {
 	}
 }
 
-export { getSubcategories, createSubcategories }
+const getSubcategoriesByCategoryId = async (req: Request, res: Response) => {
+	try {
+		const { categoryId } = req.body
+		const subcategory = await Subcategory.findAll({ where: { categoryId } })
+		res.status(200).json(subcategory)
+	} catch (error) {
+		res.status(500).json({ message: error })
+	}
+}
+
+export { getSubcategories, createSubcategories, getSubcategoriesByCategoryId }
