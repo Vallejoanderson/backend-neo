@@ -14,4 +14,4 @@ sequelize
 	.then(() => {
 	  app.listen(port, () => { console.log('Server listening on: ', port) })
 	})
-	.catch((err: any) => { console.error('Connection fail: ', err) })
+	.catch((err) => { console.error('Connection fail: ', err) })

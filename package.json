@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node dist/main.js",
-    "build": "tsc --env-file=.env",
+    "build": "tsc",
     "dev": "nodemon -r dotenv/config ./src/main.ts"
   },
   "dependencies": {

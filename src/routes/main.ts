@@ -1,8 +1,8 @@
-import express, { Request, Response } from 'express'
-import { productsRoute } from './products/index'
+import express from 'express'
+import { categoriesRoute } from './categories/index'
 const router = express.Router()
 
 router.use(express.json())
-router.use('/products', productsRoute)
+router.use('/categories', categoriesRoute)
 
 export { router }
