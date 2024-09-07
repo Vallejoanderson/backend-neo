@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import { sequelize } from '../connection'
 
-const Product = sequelize.define('Product', {
+const Item = sequelize.define('Item', {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -14,10 +14,15 @@ const Product = sequelize.define('Product', {
       key: 'id',
     }
   },
+  type: {
+    type: DataTypes.ENUM('product', 'service'),
+    allowNull: false,
+    defaultValue: 'product',
+  },
   createdAt: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW,
   },
-}, { tableName: 'products'})
+}, { tableName: 'items'})
 
-export { Product }
+export { Item }
